@@ -1,7 +1,5 @@
-
-
 class Solution:
-    def wordBreak(self, s, wordDict ) :
+    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
         n = len(s)
 
         dp= [False] *(n+1)
@@ -14,11 +12,4 @@ class Solution:
                     dp[l]= True
                     break
         return dp[len(s)]
-
-
-
-s =Solution()
-st = "applepenapple"
-wordDict = ["apple","pen"]
-print(s.wordBreak(st, wordDict))
 
