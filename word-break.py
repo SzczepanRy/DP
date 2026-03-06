@@ -1,7 +1,6 @@
 class Solution:
     def wordBreak(self, s, wordDict ) :
 
-        exist= []
         res= 0
 
         def wordcheck(s ,sea):
@@ -16,19 +15,14 @@ class Solution:
 
         for st in wordDict:
             print(s)
-            if st in exist:
-                res +=1
-                continue
+            vals =wordcheck(st, s)
+            if vals[0]:
+                s= vals[1]
+                res+=1
             else:
-                vals =wordcheck(st, s)
-                if vals[0]:
-                    s= vals[1]
-                    res+=1
-                    exist.append(st)
-                else:
-                    return False
+                return False
 
-        print(res, exist)
+        print(res)
         if res == len(wordDict):
             return True
         return False
